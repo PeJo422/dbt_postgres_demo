@@ -1,5 +1,5 @@
 
-WITH Transactions as (
+WITH Dim_Transactions as (
 
 select  
  user_id
@@ -12,4 +12,4 @@ select
 FROM public.transactions
 )
 
-SELECT * From Transactions 
+SELECT * From Dim_Transactions 
