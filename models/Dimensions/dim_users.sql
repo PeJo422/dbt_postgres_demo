@@ -15,7 +15,7 @@ FROM public.users usr
 
 SELECT 
 *
-, (select COALESCE(MIN(purchase_date)) from {{ref("transactions")}} ) as "First Buy"
+, (select COALESCE(MIN(purchase_date)) from {{ref("dim_transactions")}} ) as "First Buy"
 
  From users u
 
