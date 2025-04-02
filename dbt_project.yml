@@ -48,4 +48,4 @@ models:
     Facts:
        #Applies to files in the Retail folder
       +materialized: table
-      #+schema: Fact
+      #+schema: Fact 
