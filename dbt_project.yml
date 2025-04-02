@@ -45,7 +45,7 @@ models:
     Dimensions: 
       #Applies to files in the Marts folder
       +materialized: table
-      +schema: Fact
+      +schema: Dim
       Facts:
       #Applies to files in the Retail folder
         +materialized: table
