@@ -12,4 +12,4 @@ select
 FROM public.transactions
 )
 
-SELECT * From Transactions
+SELECT * From Transactions 
