@@ -42,19 +42,11 @@ models:
     +schema: dbo
     Disabled: #Applies to files in the Disabled folder
       +enabled: false #All files/Models in the disabled folder will be set to 'disbled'
-    Marts: 
+    Dimensions: 
       #Applies to files in the Marts folder
-      +materialized: view
+      +materialized: table
       +schema: Fact
-      Retail:
+      Facts:
       #Applies to files in the Retail folder
         +materialized: table
         +schema: Fact
-        Dimensions:
-        #Applies to files in the Dimensions folder
-          +materialized: table
-          +schema: Dim
-        Facts:
-        #Applies to files in the Facts folder
-          +schema: Fact
-          +materialized: table
