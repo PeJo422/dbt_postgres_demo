@@ -1,3 +1,5 @@
+
+WITH employees as (
 SELECT 
 id
 ,name
@@ -9,3 +11,6 @@ id
 ,salary
 ,created_at
 FROM public.employees
+)
+
+SELECT * FROM   employees

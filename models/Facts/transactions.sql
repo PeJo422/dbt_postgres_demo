@@ -1,3 +1,6 @@
+
+WITH Transactions as (
+
 select  
  user_id
 ,card_number
@@ -7,3 +10,6 @@ select
 ,purchase_date
 
 FROM public.transactions
+)
+
+SELECT * From Transactions
