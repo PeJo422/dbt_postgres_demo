@@ -6,4 +6,4 @@ select
 ,merchant
 ,purchase_date
 
-FROM transactions
+FROM public.transactions
