@@ -9,6 +9,7 @@ With Jokes as (
     ,racist
     ,sexist
     ,explicit
+    ,Cast(date as date)
 
     FROM public.daily_jokes
     Where racist = false and sexist =false and explicit = false
