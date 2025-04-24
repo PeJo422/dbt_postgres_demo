@@ -6,7 +6,7 @@ from public.daily_jokes
 
 
 Select
-row_number() OVER (ORDER BY category asc) id
+row_number() OVER (ORDER BY category asc) as id
 ,category
 
 From raw_jokes
