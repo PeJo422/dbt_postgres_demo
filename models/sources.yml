@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: raw  # Schema name in your warehouse
+  - name: public  # Schema name in your warehouse
     database: postgres  # Optional depending on your target
     schema: public
     tables:
