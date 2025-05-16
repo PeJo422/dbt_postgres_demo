@@ -11,7 +11,7 @@ With Jokes as (
     ,explicit
     ,Cast(date as date)
 
-    FROM public.daily_jokes
+    FROM {{ source('joke_raw', 'daily_jokes') }}
     Where racist = false and sexist =false and explicit = false
 ),
 

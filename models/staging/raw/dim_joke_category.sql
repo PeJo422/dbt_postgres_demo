@@ -1,7 +1,7 @@
 With raw_jokes as (
 Select Distinct
 category
-from public.daily_jokes
+from {{ source('joke_raw', 'daily_jokes') }}
 )
 
 
