@@ -1,5 +1,5 @@
 
-WITH Dim_Transactions as (
+WITH Transactions as (
 
 select  
  user_id
@@ -9,7 +9,7 @@ select
 ,merchant
 ,purchase_date
 
-FROM public.transactions
+FROM {{ source('crm_raw', 'transactions') }} 
 )
 
-SELECT * From Dim_Transactions 
+SELECT * From Transactions 
