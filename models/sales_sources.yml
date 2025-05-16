@@ -1,12 +1,13 @@
 version: 2
 
 sources:
-  - name: crm_raw  # Schema name in your warehouse
-    database: postgres  # Optional depending on your target
-    schema: public
-    tables:
+  - name: crm_raw  # Name of the source to be referenced in queries
+    database: postgres  # Name of the database
+    schema: public # Schema name in the warehouse
+    tables: 
       
       - name: transactions
+        
         description: "All user transactions processed through the system"
 
       - name: users
