@@ -12,3 +12,4 @@ exposures:
     owner:
       name: Peter 
       email: peter@mycompany.com
+    tags: ['Sales','KPI']
