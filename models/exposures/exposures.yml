@@ -14,7 +14,7 @@ exposures:
       email: peter@mycompany.com
     tags: ['Sales','KPI']
 
-  - name: Sales_YTD
+  - name: sales_ytd
     type: report
     maturity: high
     url: https://superset.company.com/sales
