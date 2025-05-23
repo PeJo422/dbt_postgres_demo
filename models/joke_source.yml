@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: joke_raw  # Schema name in your warehouse
-    database: postgres  # Optional depending on your target
+    #database: postgres  # Optional depending on your target
     schema: public
     tables:
       - name: daily_jokes
