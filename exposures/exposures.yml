@@ -1,3 +1,5 @@
+version: 2
+
 exposures:
   - name: sales_dashboard
     type: dashboard
