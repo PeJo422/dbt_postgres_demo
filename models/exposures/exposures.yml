@@ -15,7 +15,7 @@ exposures:
     tags: ['Sales','KPI']
 
   - name: sales_ytd
-    type: report
+    type: dashboard
     maturity: high
     url: https://superset.company.com/sales
     description: Sales KPIs used by management
