@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: crm_raw  # Name of the source to be referenced in queries
-    database: postgres  # Name of the database
+    #database: postgres  # Name of the database
     schema: public # Schema name in the warehouse
     tables: 
       
@@ -13,5 +13,4 @@ sources:
       - name: users
         description: "Registered users with their profiles and preferences"
 
-      - name: employees
-        description: "Internal employee data synced from the HR system"
+     
