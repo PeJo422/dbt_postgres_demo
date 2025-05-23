@@ -1,6 +1,6 @@
 WITH new_customers AS (
   SELECT 
-    TO_CHAR("First Buy", 'YYYY-MM') AS year_month,
+    TO_CHAR("First Buy", 'YYYY-MM') AS year_month,0,
     COUNT(*) AS new_customers
   FROM {{ ref("dim_users") }}
   WHERE "First Buy" IS NOT NULL
