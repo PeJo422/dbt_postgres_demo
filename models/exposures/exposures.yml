@@ -13,3 +13,16 @@ exposures:
       name: Peter 
       email: peter@mycompany.com
     tags: ['Sales','KPI']
+
+  - name: Sales_YTD
+    type: Report
+    maturity: high
+    url: https://superset.company.com/sales
+    description: Sales KPIs used by management
+    depends_on:
+      - ref('fact_transactions')
+      - ref('dim_users')
+    owner:
+      name: Peter 
+      email: peter@mycompany.com
+    tags: ['Sales','KPI']
