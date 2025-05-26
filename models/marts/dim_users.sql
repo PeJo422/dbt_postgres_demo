@@ -10,7 +10,7 @@ WITH users AS (
 
 SELECT 
   u.*,
-  COALESCE(MIN(t.purchase_date), '1999-01-01') AS "First purchase"
+  COALESCE(MIN(t.purchase_date), '1999-01-01') AS "first_purchase"
 FROM users u
 LEFT JOIN 
 {{ ref('stg_transactions') }} 

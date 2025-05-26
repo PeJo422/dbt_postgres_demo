@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: >
+      Dimension table containing user profile information.
+      Each record represents a unique user with demographic and contact details.
+      Serves as the primary reference for user-related analytics and segmentation.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: id
+        description: "Unique identifier for the user."
+        data_type: int
+        constraints:
+          - type: not_null
+
+      - name: name
+        description: "Full name of the user."
+        data_type: string
+
+      - name: email
+        description: "Email address associated with the user account."
+        data_type: string
+
+      - name: age
+        description: "Age of the user in years."
+        data_type: int
+
+      - name: created_at
+        description: "Timestamp when the user account was created."
+        data_type: timestamp
+      
+      - name: first_purchase
+        description: "Date of the first purchase the customer has made"
+        data_type: date
+
+  - name: fact_transactions
+    description: >
+      Fact table capturing all financial transactions made by users.
+      Includes transactional details such as payment method, amount, currency, and merchant information.
+      Used for spend analysis, fraud detection, and financial reporting.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: user_id
+        description: "Identifier linking the transaction to a user in dim_users."
+        data_type: int
+        constraints:
+          - type: not_null
+
+      - name: card_number
+        description: "Masked card number used in the transaction."
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: amount
+        description: "Monetary value of the transaction."
+        data_type: numeric
+        constraints:
+          - type: not_null
+
+      - name: currency
+        description: "ISO currency code for the transaction (e.g., USD, EUR)."
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: merchant
+        description: "Merchant or vendor where the transaction occurred."
+        data_type: string
+
+      - name: purchase_date
+        description: "Date when the transaction was made."
+        data_type: date
+        constraints:
+          - type: not_null
