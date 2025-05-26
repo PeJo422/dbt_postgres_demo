@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: transactions
+    description: "Fact table containing all financial transactions made by users across various merchants."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: user_id
+        description: "The ID of the user making the transaction."
+        data_type: int
+        constraints:
+          - type: not_null
+
+      - name: card_number
+        description: "The card number used during the transaction."
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: amount
+        description: "Monetary value of the transaction."
+        data_type: numeric
+        constraints:
+          - type: not_null
+
+      - name: currency
+        description: "Currency used in the transaction (e.g., USD, EUR)."
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: merchant
+        description: "Merchant where the transaction took place."
+        data_type: string
+
+      - name: purchase_date
+        description: "The date of the transaction."
+        data_type: date
+        constraints:
+          - type: not_null

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimension table containing customer information."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: customer_id
+        description: "Primary key for the customer."
+        data_type: int
+        constraints:
+          - type: not_null
+      - name: customer_name
+        description: "Full name of the customer."
+        data_type: string
