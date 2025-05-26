@@ -5,16 +5,15 @@ WITH users AS (
     usr.email,
     usr.age,
     usr.created_at
-  FROM {{ source('crm_raw', 'users') }} usr
+  FROM {{ ref('stg_users') }} usr
 )
 
 SELECT 
   u.*,
-  COALESCE(MIN(t.purchase_date), '1999-01-01') AS "First Buy"
+  COALESCE(MIN(t.purchase_date), '1999-01-01') AS "First purchase"
 FROM users u
 LEFT JOIN 
-{{ source('crm_raw', 'transactions') }} 
+{{ ref('stg_transactions') }} 
 
 t ON u.id = t.user_id
 GROUP BY u.id, u.name, u.email, u.age, u.created_at
-ORDER BY "First Buy" DESC

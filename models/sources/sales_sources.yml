@@ -7,8 +7,7 @@ sources:
     tables: 
       
       - name: transactions
-        
-        description: "All user transactions processed through the system"
+        description: "All transactions processed through the system"
 
       - name: users
         description: "Registered users with their profiles and preferences"
