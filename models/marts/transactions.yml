@@ -2,19 +2,22 @@ version: 2
 
 models:
   - name: transactions
-    description: "Fact table containing all financial transactions made by users across various merchants."
+    description: >
+      This fact table contains all financial transactions made by users. 
+      Each row represents a single transaction made using a card, including purchase details, currency, and merchant data.
+      Used for financial reporting, fraud detection, and spend analysis.
     config:
       contract:
         enforced: true
     columns:
       - name: user_id
-        description: "The ID of the user making the transaction."
+        description: "Unique identifier of the user who performed the transaction."
         data_type: int
         constraints:
           - type: not_null
 
       - name: card_number
-        description: "The card number used during the transaction."
+        description: "Masked card number used to perform the transaction."
         data_type: string
         constraints:
           - type: not_null
@@ -26,17 +29,17 @@ models:
           - type: not_null
 
       - name: currency
-        description: "Currency used in the transaction (e.g., USD, EUR)."
+        description: "ISO 4217 currency code representing the currency used (e.g., USD, EUR)."
         data_type: string
         constraints:
           - type: not_null
 
       - name: merchant
-        description: "Merchant where the transaction took place."
+        description: "Name of the merchant where the transaction occurred."
         data_type: string
 
       - name: purchase_date
-        description: "The date of the transaction."
+        description: "Date when the transaction was made."
         data_type: date
         constraints:
           - type: not_null
