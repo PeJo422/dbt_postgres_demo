@@ -9,7 +9,7 @@ select
 ,merchant
 ,purchase_date
 
-FROM {{ref('raw_transactions') }} 
+FROM {{ref('stg_transactions') }} 
 )
 
 SELECT * From Transactions 
