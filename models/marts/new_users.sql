@@ -1,10 +1,10 @@
 WITH new_customers AS (
   SELECT 
-    TO_CHAR("First purchase", 'YYYY-MM') AS year_month,0,
+    TO_CHAR("first_purchase", 'YYYY-MM') AS year_month,0,
     COUNT(*) AS new_customers
   FROM {{ ref("dim_users") }}
-  WHERE "First purchase" IS NOT NULL
-  GROUP BY TO_CHAR("First purchase", 'YYYY-MM')
+  WHERE "first_purchase" IS NOT NULL
+  GROUP BY TO_CHAR("first_purchase", 'YYYY-MM')
 ),
 
 returning_customers AS (
@@ -13,7 +13,7 @@ returning_customers AS (
     COUNT(DISTINCT t.user_id) AS returning_customers
   FROM {{ ref('fact_transactions') }} t
   JOIN {{ ref('dim_users') }} u ON t.user_id = u.id
-  WHERE t.purchase_date > u."First purchase"
+  WHERE t.purchase_date > u."first_purchase"
   GROUP BY TO_CHAR(t.purchase_date, 'YYYY-MM')
 )
 
