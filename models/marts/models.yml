@@ -6,6 +6,9 @@ models:
       Dimension table containing user profile information.
       Each record represents a unique user with demographic and contact details.
       Serves as the primary reference for user-related analytics and segmentation.
+    config:
+      contract:
+        enforced: true
     columns:
       - name: id
         description: "Unique identifier for the user."
@@ -28,15 +31,19 @@ models:
       - name: created_at
         description: "Timestamp when the user account was created."
         data_type: timestamp
+      
+      - name: first_purchase
+        description: "Date of the first purchase the customer has made"
+        data_type: date
 
-        ################################
-        ################################
-        
   - name: fact_transactions
     description: >
       Fact table capturing all financial transactions made by users.
       Includes transactional details such as payment method, amount, currency, and merchant information.
       Used for spend analysis, fraud detection, and financial reporting.
+    config:
+      contract:
+        enforced: true
     columns:
       - name: user_id
         description: "Identifier linking the transaction to a user in dim_users."
