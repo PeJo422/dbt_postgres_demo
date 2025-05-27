@@ -6,7 +6,7 @@ with
             category_id, 
             joke, 
             religious, 
-            political, 
+            political,
             racist,
             sexist,
             explicit, 

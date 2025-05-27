@@ -34,6 +34,7 @@ Select
 
      joke_id as id
     ,c.id as category_id
+    ,c.category
     ,joke
     ,religious
     ,political
