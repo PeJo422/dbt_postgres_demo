@@ -5,9 +5,9 @@ select
  user_id
 ,card_number
 ,amount
-,currency
+,CAST(currency as char(3))
 ,merchant
-,purchase_date
+,CAST(purchase_date as date)
 
 FROM {{ref('stg_transactions') }} 
 )
