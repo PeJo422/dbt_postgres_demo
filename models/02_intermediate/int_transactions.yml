@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_transactions
+    description: >
+      Intermediate model for transaction records.
+      Applies filtering and logic for valid financial transactions.
+      Prepares data for fact modeling, e.g. fct_sales.
+    columns:
+      - name: user_id
+        description: "User identifier linked to the transaction."
+      - name: card_number
+        description: "Masked card number used in the transaction."
+      - name: amount
+        description: "Value of the transaction in original currency."
+      - name: currency
+        description: "Currency code in ISO format (e.g., 'USD')."
+      - name: merchant
+        description: "Merchant or vendor that processed the transaction."
+      - name: purchase_date
+        description: "Date when the transaction occurred."

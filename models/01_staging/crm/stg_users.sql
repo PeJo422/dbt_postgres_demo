@@ -1,7 +1,7 @@
 WITH users AS (
   SELECT 
-    id, as 'user_id'
-    name, as 'full name'
+    id, 
+    name, 
     email,
     age, as 
     created_at
