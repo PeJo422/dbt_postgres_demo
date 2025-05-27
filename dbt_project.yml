@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: "dbt_demo_with_postgres"
+name: "PeJo Analytics"
 version: "1.0.0"
 config-version: 2
 
@@ -35,15 +35,15 @@ clean-targets: # directories to be removed by `dbt clean`
 
 models:
   dbt_demo_with_postgres:
-    # Applies to all files under models
+    #Applies to all files under models
     +materialized: view
-    Disabled: #Applies to files in the Disabled folder
+    Disabled: 
+    #Applies to files in the Disabled folder
       +enabled: false #All files/Models in the disabled folder will be set to 'disbled'
     staging:
-      #Applies to files in the Marts folder
+      #Applies to files in the Staging folder
       +materialized: table
-      #+schema: Dim
     marts:
-      #Applies to files in the Retail folder
+      #Applies to files in the Marts folder
       +materialized: view
-      #+schema: Fact
+
