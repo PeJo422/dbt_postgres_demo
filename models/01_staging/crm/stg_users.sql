@@ -3,8 +3,9 @@ WITH users AS (
     id, 
     name, 
     email,
-    age,
-    created_at
+    age,  
+  CAST(created_at AS DATE) AS created_date,
+  TO_CHAR(created_at, 'HH24:MI') AS created_time
   FROM {{ source('crm_raw', 'users') }}
 )
 

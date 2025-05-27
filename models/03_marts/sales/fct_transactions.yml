@@ -1,41 +1,6 @@
 version: 2
 
 models:
-  - name: dim_users
-    description: >
-      Dimension table containing user profile information.
-      Each record represents a unique user with demographic and contact details.
-      Serves as the primary reference for user-related analytics and segmentation.
-    config:
-      contract:
-        enforced: true
-    columns:
-      - name: id
-        description: "Unique identifier for the user."
-        data_type: int
-        constraints:
-          - type: not_null
-
-      - name: name
-        description: "Full name of the user."
-        data_type: string
-
-      - name: email
-        description: "Email address associated with the user account."
-        data_type: string
-
-      - name: age
-        description: "Age of the user in years."
-        data_type: int
-
-      - name: created_at
-        description: "Timestamp when the user account was created."
-        data_type: timestamp
-      
-      - name: first_purchase
-        description: "Date of the first purchase the customer has made"
-        data_type: date
-
   - name: fct_transactions
     description: >
       Fact table capturing all financial transactions made by users.
