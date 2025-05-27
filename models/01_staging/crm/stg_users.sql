@@ -3,7 +3,7 @@ WITH users AS (
     id, 
     name, 
     email,
-    age, as 
+    age,
     created_at
   FROM {{ source('crm_raw', 'users') }}
 )
