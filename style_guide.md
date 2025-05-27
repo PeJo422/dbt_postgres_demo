@@ -29,6 +29,7 @@ dbt_project/
 - Prefix staging models with `stg_`
 - Intermediate models with `int_`
 - Final marts with business logic: `fct_`, `dim_`, `rpt_`
+- Doobeedoobeedooo
 
 ### ✅ Files
 - Use `snake_case` for all file names
