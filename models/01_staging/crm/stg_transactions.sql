@@ -7,7 +7,7 @@ select
 ,amount 
 ,currency 
 ,merchant
-,purchase_date 
+,COALESCE(purchase_date, DATE '1999-01-01') as purchase_date
 
 FROM {{ source("crm_raw", "transactions") }} 
 )
