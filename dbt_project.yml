@@ -35,16 +35,15 @@ clean-targets: # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  dbt_demo_with_postgres:
-    #Applies to all files under models
+  pejo_analytics:
     +materialized: view
+    
     Disabled: 
-    #Applies to files in the Disabled folder
-      +enabled: false #All files/Models in the disabled folder will be set to 'disbled'
-    staging:
-      #Applies to files in the Staging folder
-      +materialized: table
-    marts:
-      #Applies to files in the Marts folder
-      +materialized: view
+      +enabled: false 
+
+      staging:
+        +materialized: table
+
+      marts:
+        +materialized: view
 
