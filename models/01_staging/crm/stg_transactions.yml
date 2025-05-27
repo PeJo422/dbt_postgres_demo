@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: >
+      Staging model capturing raw transactional data ingested from source systems.
+      Includes core transactional fields with basic standardization and cleaning applied.
+      Prepares data for downstream fact models related to user transactions and financial analysis.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: user_id
+        description: "Foreign key referencing the user identifier in raw user data."
+        data_type: int
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: card_number
+        description: "Masked card number as provided in source transaction data."
+        data_type: string
+        constraints:
+          - type: not_null
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Transaction amount as recorded in source, in the original currency."
+        data_type: numeric
+        constraints:
+          - type: not_null
+
+      - name: currency
+        description: "Currency code from source transaction record (e.g., USD, EUR)."
+        data_type: string
+        constraints:
+          - type: not_null
+
+      - name: merchant
+        description: "Merchant name or identifier as reported in source transactions."
+        data_type: string
+
+      - name: purchase_date
+        description: "Date when the transaction occurred, sourced from raw data."
+        data_type: date
+        constraints:
+          - type: not_null

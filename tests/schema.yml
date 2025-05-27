@@ -1,0 +1,6 @@
+version: 2
+data_tests:
+  - name: no_future_purchases
+    description: >
+      Checks that there are no transactions with a purchase_date in the future.
+      This is implemented as a singular test SQL file located in the `tests/` directory.

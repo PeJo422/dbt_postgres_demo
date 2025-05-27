@@ -5,7 +5,9 @@ WITH users AS (
     email,
     age,
     created_at
-  FROM {{ source('crm_raw', 'users') }}
+    first_purchase
+  FROM {{ ref('int_users') }}
 )
 
-SELECT * from users
+SELECT *
+FROM users
