@@ -4,7 +4,7 @@ WITH users AS (
     usr.name,
     usr.email,
     usr.age,
-    usr.created_at
+    CAST(usr.created_at as DATE) as "created_at"
   FROM {{ ref('stg_users') }} usr
 )
 

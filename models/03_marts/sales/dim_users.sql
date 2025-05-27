@@ -4,7 +4,7 @@ WITH users AS (
     name,
     email,
     age,
-    created_at
+    created_at,
     first_purchase
   FROM {{ ref('int_users') }}
 )
