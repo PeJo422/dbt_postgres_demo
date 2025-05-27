@@ -9,5 +9,4 @@ WITH users AS (
   FROM {{ ref('int_users') }}
 )
 
-SELECT *
-FROM users
+SELECT * FROM users
