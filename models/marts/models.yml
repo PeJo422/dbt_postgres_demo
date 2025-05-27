@@ -40,7 +40,7 @@ models:
     description: >
       Fact table capturing all financial transactions made by users.
       Includes transactional details such as payment method, amount, currency, and merchant information.
-      Used for spend analysis, fraud detection, and financial reporting.
+      Used for spend analysis, fraud detection, and financial reporting. Yeah!
     config:
       contract:
         enforced: true
