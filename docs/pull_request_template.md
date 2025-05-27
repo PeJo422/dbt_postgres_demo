@@ -56,4 +56,7 @@ addressed, and remove any items that are not relevant to this PR.
 {%- if project.warehouse == 'redshift' %}
 - [ ] I have added sort and dist keys to models materialized as tables.
 - [ ] I have validated the SQL in any late-binding views.
+{%- elif project.warehouse == 'postgres' %}
+- [ ] I have added the shit in the shit
+- [ ] I have validated my shit
 {% endif %}
