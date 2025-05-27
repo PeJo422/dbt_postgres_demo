@@ -36,7 +36,7 @@ models:
         description: "Date of the first purchase the customer has made"
         data_type: date
 
-  - name: fact_transactions
+  - name: fct_transactions
     description: >
       Fact table capturing all financial transactions made by users.
       Includes transactional details such as payment method, amount, currency, and merchant information.
