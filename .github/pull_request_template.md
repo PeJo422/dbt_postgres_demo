@@ -2,61 +2,89 @@
 Provide a short summary in the Title above. Examples of good PR titles:
 * "Feature: add so-and-so models"
 * "Fix: deduplicate such-and-such"
-* "Update: dbt version 0.13.0"
+* "Update: dbt version 1.7.0"
 -->
 
-## Description & motivation
+## 🚀 Description & Motivation
 <!---
-Describe your changes, and why you're making them. Is this linked to an open
-issue, a Trello card, or another pull request? Link it here.
+Describe your changes and their purpose. Link to Jira, Trello, GitHub issues or related PRs.
 -->
 
-## To-do before merge
+## 🛠 To-do before merge
 <!---
-(Optional -- remove this section if not needed)
-Include any notes about things that need to happen before this PR is merged, e.g.:
-- [ ] Change the base branch
-- [ ] Update dbt Cloud jobs
-- [ ] Ensure PR #56 is merged
+Remove if not needed. Use for:
+- [ ] Update target branch
+- [ ] Confirm dependencies (e.g. PR #56) are merged
+- [ ] Update dbt Cloud jobs or CI/CD pipeline configs
 -->
 
-## Screenshots:
+## 🖼️ Screenshots / DAG Updates
 <!---
-Include a screenshot of the relevant section of the updated DAG. You can access
-your version of the DAG by running `dbt docs generate && dbt docs serve`.
+Optional: Attach screenshots of changes in your DAG (from `dbt docs serve`) or visual flow.
 -->
 
-## Validation of models:
+## ✅ Model Validation
 <!---
-Include any output that confirms that the models do what is expected. This might
-be a link to an in-development dashboard in your BI tool, or a query that
-compares an existing model with a new one.
+How do you know it works? Link to BI dashboards, row count diff queries, QA steps, etc.
 -->
 
-## Changes to existing models:
+## ♻️ Changes to Existing Models
 <!---
-Include this section if you are changing any existing models. Link any related
-pull requests on your BI tool, or instructions for merge (e.g. whether old
-models should be dropped after merge, or whether a full-refresh run is required)
+Explain whether models are renamed, dropped, need a full-refresh, etc.
+Include any backwards-incompatible changes or migration steps.
 -->
 
-## Checklist:
-<!---
-This checklist is mostly useful as a reminder of small things that can easily be
-forgotten – it is meant as a helpful tool rather than hoops to jump through.
-Put an `x` in all the items that apply, make notes next to any that haven't been
-addressed, and remove any items that are not relevant to this PR.
--->
-- [ ] My pull request represents one logical piece of work.
-- [ ] My commits are related to the pull request and look clean.
-- [ ] My SQL follows the [PeJo style guide](https://github.com/PeJo422/dbt_postgres_demo/blob/main/style_guide.md).
-- [ ] I have materialized my models appropriately.
-- [ ] I have added appropriate tests and documentation to any new models.
-- [ ] I have updated the README file.
-{%- if project.warehouse == 'redshift' %}
-- [ ] I have added sort and dist keys to models materialized as tables.
-- [ ] I have validated the SQL in any late-binding views.
-{%- elif project.warehouse == 'postgres' %}
-- [ ] I have added the shit in the shit
-- [ ] I have validated my shit
-{% endif %}
+---
+
+## 🧪 Tests Added
+- [ ] `not_null` tests for primary keys
+- [ ] `unique` tests for natural keys
+- [ ] `relationship` tests for foreign keys
+- [ ] Custom data quality tests (if applicable)
+- [ ] Tests documented in `schema.yml`
+
+---
+
+## 📚 Documentation Updated
+- [ ] Model-level descriptions added
+- [ ] Column-level descriptions added
+- [ ] New sources documented
+- [ ] Markdown docs added (in `/docs`)
+- [ ] README updated
+
+---
+
+## 🧾 Checklist
+- [ ] My pull request represents one logical piece of work
+- [ ] All new models follow the [PeJo style guide](https://github.com/PeJo422/dbt_postgres_demo/blob/main/style_guide.md)
+- [ ] Appropriate materializations are used (e.g. `table`, `view`, `incremental`)
+- [ ] I used `{{ ref() }}` and `{{ source() }}` properly
+- [ ] Models run successfully in `dev`
+- [ ] I ran `dbt build` before submitting
+- [ ] PR is scoped to a single warehouse (Redshift/Postgres/Other)
+
+---
+
+## 🏭 Warehouse-Specific Tasks
+<!--- These are visible to humans — no Jinja required since GitHub doesn’t render it -->
+<details>
+<summary>🔺 Redshift</summary>
+
+- [ ] I have added `sort` and `dist` keys for tables
+- [ ] Late-binding views validated
+- [ ] Compression encoding considered
+
+</details>
+
+<details>
+<summary>🐘 Postgres</summary>
+
+- [ ] Indexing strategy considered
+- [ ] Performance compared across joins
+- [ ] EXPLAIN plan reviewed (if applicable)
+
+</details>
+
+---
+
+_This template is generated with ❤️ by PeJo's tireless keyboard._
