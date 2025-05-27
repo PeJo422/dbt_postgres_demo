@@ -39,12 +39,15 @@ models:
   pejo_analytics:
     +materialized: view
 
-    Disabled: 
+    00_disabled: 
       +enabled: false 
 
-      staging:
+      01_staging:
+        +materialized: table
+      
+      02_intermediate:
         +materialized: table
 
-      marts:
+      03_marts:
         +materialized: view
 

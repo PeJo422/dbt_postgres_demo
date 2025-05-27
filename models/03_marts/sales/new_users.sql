@@ -11,7 +11,7 @@ returning_customers AS (
   SELECT 
     TO_CHAR(t.purchase_date, 'YYYY-MM') AS year_month,
     COUNT(DISTINCT t.user_id) AS returning_customers
-  FROM {{ ref('fact_transactions') }} t
+  FROM {{ ref('fct_transactions') }} t
   JOIN {{ ref('dim_users') }} u ON t.user_id = u.id
   WHERE t.purchase_date > u."first_purchase"
   GROUP BY TO_CHAR(t.purchase_date, 'YYYY-MM')

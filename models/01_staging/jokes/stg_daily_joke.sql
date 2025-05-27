@@ -11,7 +11,7 @@ With Jokes as (
     ,explicit
     ,Cast(date as date)
 
-    FROM {{ ref('raw_daily_joke') }}
+   FROM {{ source('joke_raw', 'daily_jokes') }}
     Where racist = false and sexist =false and explicit = false
 ),
 
@@ -34,6 +34,7 @@ Select
 
      joke_id as id
     ,c.id as category_id
+    ,c.category
     ,joke
     ,religious
     ,political

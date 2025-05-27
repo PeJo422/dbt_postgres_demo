@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_users
+    description: >
+      Intermediate model for user records.
+      Combines and prepares enriched user-level attributes
+      derived from staging data, ready to be consumed by marts.
+    columns:
+      - name: user_id
+        description: "Unique identifier for the user."
+      - name: name
+        description: "User's full name from source."
+      - name: email
+        description: "Normalized email address."
+      - name: age
+        description: "User's age at the time of data extraction."
+      - name: created_at
+        description: "Timestamp when the account was created."
+      - name: first_purchase
+        description: "Date of the user's first known purchase."
