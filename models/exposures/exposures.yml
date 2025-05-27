@@ -7,7 +7,7 @@ exposures:
     url: https://superset.company.com/sales
     description: Sales KPIs used by management
     depends_on:
-      - ref('fact_transactions')
+      - ref('fct_transactions')
       - ref('dim_users')
     owner:
       name: Peter 
@@ -20,7 +20,7 @@ exposures:
     url: https://superset.company.com/sales
     description: Sales KPIs used by management
     depends_on:
-      - ref('fact_transactions')
+      - ref('fct_transactions')
       - ref('dim_users')
     owner:
       name: Peter 
