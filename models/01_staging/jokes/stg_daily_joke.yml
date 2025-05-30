@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_daily_joke
+    description: >
+      Stagiong model, retreiving a joke on a daily pipeline from api.
+
+    columns:
+      - name: joke_id
+        description: "Unique id of the joke"
